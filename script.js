@@ -3,7 +3,7 @@
 const account1 = {
   owner: "Dennis Akagha Doe",
   movement: [200, 300, 120, -100, -300],
-  interestRate: 0.7,
+  interestRate: 1.2,
   pin: 1123,
 };
 const account2 = {
@@ -29,7 +29,12 @@ const accounts = [account1, account2, account3, account4];
 
 const expenseWrapper = document.querySelector(".expenses-wrapper");
 const expenses = document.querySelector(".expenses");
-const accountBal = document.querySelector('.balance h2')
+const accountBal = document.querySelector(".balance h2");
+const income = document.querySelector(".in");
+const withdrawal = document.querySelector(".out");
+const interestVal = document.querySelector(".interest");
+
+// console.log(income.textContent);
 
 expenseWrapper.innerHTML = "";
 
@@ -56,7 +61,7 @@ const displayExpenses = function (expenses) {
   });
 };
 
-// display balance
+// display balance using the reduce method
 const displayBalance = function (movement) {
   const balance = movement.reduce(
     (previousValue, currentValue, currentIndex, array) =>
@@ -64,11 +69,40 @@ const displayBalance = function (movement) {
     0
   );
 
-  accountBal.textContent = `$${balance}`
-
+  accountBal.textContent = `$${balance}`;
 };
 
-// username feature
+// Display payment summary
+const displaySummary = function (movement) {
+  // total Deposits/income
+  const movementAcc = movement
+    .filter((mov) => mov > 0)
+    .reduce((curVal, curIn) => curVal + curIn, 0);
+
+  income.innerHTML = `<span style="color: black; font-size: 15px;">In:</span> $${movementAcc}`;
+
+  // total withdrawal
+  const movementWidthrawal = movement
+    .filter((mov) => mov < 0)
+    .reduce((curVal, currIn) => curVal + currIn, 0);
+
+  withdrawal.innerHTML = `<span style="color: red; font-size: 15px;">Out:</span> $${Math.abs(
+    movementWidthrawal
+  )}`;
+
+  // total interest
+  const interest = movement
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .reduce((curVal, curI) => curVal + curI, 0);
+
+    interestVal.innerHTML = `<span style="color: black; font-size: 15px;">In:</span> $${interest.toFixed(2)}`;
+
+    
+};
+
+
+// username feature using the split and join method
 const callUsername = function (accs) {
   accs.forEach((acc) => {
     acc.username = acc.owner
@@ -79,7 +113,8 @@ const callUsername = function (accs) {
   });
 };
 
+// calling the functions
 displayExpenses(account1.movement);
-displayBalance(account1.movement)
+displayBalance(account1.movement);
 callUsername(accounts);
-
+displaySummary(account1.movement);
