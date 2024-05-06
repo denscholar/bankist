@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
     <script
       src="https://kit.fontawesome.com/66521023b5.js"
       crossorigin="anonymous"
@@ -18,109 +19,116 @@
   <body>
     <!-- navbar section -->
     <div class="p-3 shadow">
-      <nav class="container d-flex justify-content-between">
-        <div class="logo-text">Bankist Application</div>
+      <nav class="container d-flex justify-content-between align-items-center">
+        <div class="welcome__text" style="font-size: 20px; font-weight: bold;">Log in to get started</div>
         <div class="logo">Logo</div>
-        <div class="nav-link d-flex justify-content-between gap-5">
-          <div class="user">User</div>
-          <div class="pin">Pin</div>
-          <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="form">
+          <form class="form__handler d-flex gap-3 align-items-center">
+            <div class="input__user">
+                <input type="text" class="input__login__user" placeholder="user" style="outline: none; padding: 0 5px;">
+            </div>
+            <div class="input__login">
+                <input type="text" class="input__password__user" placeholder="password" style="outline: none; padding: 0 5px;">
+            </div>
+            <button class="submit__button" type="submit" style="border: none; background-color: white; font-size: 20px;padding: 0; margin: 0;"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
         </div>
       </nav>
     </div>
-    <!-- wrapper -->
+    <div class="app">
+         <!-- wrapper -->
     <div class="wrapper container w-75">
-      <div
-        class="date-wrapper d-flex justify-content-between align-items-center m-5"
-      >
-        <div class="current-date">
-          <h4 class="p-0 m-0">Current Balance</h4>
-          <small class="p-0 m-0">As at 12/03/2020</small>
-        </div>
-        <div class="balance">
-          <h2>$16,000</h2>
+        <div
+          class="date-wrapper d-flex justify-content-between align-items-center m-5"
+        >
+          <div class="current-date">
+            <h4 class="p-0 m-0">Current Balance</h4>
+            <small class="p-0 m-0">As at 12/03/2020</small>
+          </div>
+          <div class="balance">
+            <h2>$16,000</h2>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- dashboard container -->
-    <div class="container dashboard-wrapper w-75">
-        <div class="row">
-            <div class="col-8">
-                <div class="expenses-wrapper shadow p-3">
-                    <div class="expenses d-flex justify-content-between align-items-center mb-2" style="border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 7px;">
-                      <div class="details-wrapper d-flex justify-content-between align-items-center gap-3">
-                        <div class="detail d-flex justify-content-center align-items-center" style="background-color: green; padding: 7px; border-radius: 20px; color: white; height: 25px; width: 100px;text-align: center;">Deposit</div>
-                        <div class="days">Today</div>
+      
+      <!-- dashboard container -->
+      <div class="container dashboard-wrapper w-75">
+          <div class="row">
+              <div class="col-8">
+                  <div class="expenses-wrapper shadow p-3">
+                      <div class="expenses d-flex justify-content-between align-items-center mb-2" style="border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 7px;">
+                        <div class="details-wrapper d-flex justify-content-between align-items-center gap-3">
+                          <div class="detail d-flex justify-content-center align-items-center" style="background-color: green; padding: 7px; border-radius: 20px; color: white; height: 25px; width: 100px;text-align: center;">Deposit</div>
+                          <div class="days">Today</div>
+                        </div>
+                        <div class="amount">$15,000.00</div>
                       </div>
-                      <div class="amount">$15,000.00</div>
-                    </div>
-                    <div class="expenses d-flex justify-content-between align-items-center my-1" style="border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 7px;">
-                      <div class="details-wrapper d-flex justify-content-between align-items-center gap-3">
-                        <div class="detail d-flex justify-content-center align-items-center" style="background-color: red; padding: 7px; border-radius: 20px; color: white; height: 25px; width: 100px;text-align: center;">Withdrawal</div>
-                        <div class="days">Today</div>
+                      <div class="expenses d-flex justify-content-between align-items-center my-1" style="border-bottom: 1px solid rgb(210, 210, 210); padding-bottom: 7px;">
+                        <div class="details-wrapper d-flex justify-content-between align-items-center gap-3">
+                          <div class="detail d-flex justify-content-center align-items-center" style="background-color: red; padding: 7px; border-radius: 20px; color: white; height: 25px; width: 100px;text-align: center;">Withdrawal</div>
+                          <div class="days">Today</div>
+                        </div>
+                        <div class="amount">$15,000.00</div>
                       </div>
-                      <div class="amount">$15,000.00</div>
                     </div>
-                  </div>
-                  <div class="other-detail d-flex justify-content-between align-items-center my-3">
-                    <div class="in" style="color: green; font-size: 25px"> <span style="color: black; font-size: 15px;">In:</span> $20,000.00</div>
-                    <div class="out" style="color: red; font-size: 25px"> <span style="color: black; font-size: 15px;">Out:</span>$20,000.00</div>
-                    <div class="interest" style="color: green; font-size: 25px;"><span style="color: black; font-size: 15px;">INTEREST: </span>$20,000.00</div>
-                    <div class="sort"><i class="fa-solid fa-arrow-down-9-1"></i> SORT</div>
-                  </div>
-
-            </div>
-            <div class="col-4">
-                   <div class="input-field p-3 shadow" style="background-color: rgba(255, 255, 0, 0.714);">
-                    <h5>Transfer Money</h5>
-                    <div class="row">
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                            <small>Transfer to</small>
-                        </div>
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                            <small>Amount</small>
-                        </div>
-                        <div class="col-2">
-                            <i class="fa-solid fa-arrow-right" style="background-color: white; padding: 10px;"></i>
-                        </div>
+                    <div class="other-detail d-flex justify-content-between align-items-center my-3">
+                      <div class="in" style="color: green; font-size: 25px"> <span style="color: black; font-size: 15px;">In:</span> $20,000.00</div>
+                      <div class="out" style="color: red; font-size: 25px"> <span style="color: black; font-size: 15px;">Out:</span>$20,000.00</div>
+                      <div class="interest" style="color: green; font-size: 25px;"><span style="color: black; font-size: 15px;">INTEREST: </span>$20,000.00</div>
+                      <div class="sort"><i class="fa-solid fa-arrow-down-9-1"></i> SORT</div>
                     </div>
-                   </div>
-                   <div class="my-3 p-3 shadow" style="background-color: rgba(0, 128, 0, 0.645);">
-                    <h5>Request loan</h5>
-                    <div class="row">
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                            <small>Transfer to</small>
-                        </div>
-                        <div class="col-2">
-                            <i class="fa-solid fa-arrow-right" style="background-color: white; padding: 10px;"></i>
-                        </div>
-                    </div>
-                   </div>
-                   <div class="my-3 p-3 shadow" style="background-color: rgba(255, 0, 0, 0.707);">
-                    <h5>Close account</h5>
-                    <div class="row">
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                            <small>Transfer to</small>
-                        </div>
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                            <small>Amount</small>
-                        </div>
-                        <div class="col-2">
-                            <i class="fa-solid fa-arrow-right" style="background-color: white; padding: 10px;"></i>
-                        </div>
-                    </div>
-                   </div>
-            </div>
-        </div>
+  
+              </div>
+              <div class="col-4">
+                     <div class="input-field p-3 shadow" style="background-color: orange;">
+                      <h5>Transfer Money</h5>
+                      <div class="row">
+                          <div class="col-5">
+                              <input type="text" class="form-control">
+                              <small>Transfer to</small>
+                          </div>
+                          <div class="col-5">
+                              <input type="text" class="form-control">
+                              <small>Amount</small>
+                          </div>
+                          <div class="col-2">
+                              <i class="fa-solid fa-arrow-right" style="background-color: white; padding: 10px;"></i>
+                          </div>
+                      </div>
+                     </div>
+                     <div class="my-3 p-3 shadow" style="background-color: rgba(0, 128, 0, 0.645);">
+                      <h5>Request loan</h5>
+                      <div class="row">
+                          <div class="col-5">
+                              <input type="text" class="form-control">
+                              <small>Transfer to</small>
+                          </div>
+                          <div class="col-2">
+                              <i class="fa-solid fa-arrow-right" style="background-color: white; padding: 10px;"></i>
+                          </div>
+                      </div>
+                     </div>
+                     <div class="my-3 p-3 shadow" style="background-color: rgba(255, 0, 0, 0.707);">
+                      <h5>Close account</h5>
+                      <div class="row">
+                          <div class="col-5">
+                              <input type="text" class="form-control">
+                              <small>Transfer to</small>
+                          </div>
+                          <div class="col-5">
+                              <input type="text" class="form-control">
+                              <small>Amount</small>
+                          </div>
+                          <div class="col-2">
+                              <i class="fa-solid fa-arrow-right" style="background-color: white; padding: 10px;"></i>
+                          </div>
+                      </div>
+                     </div>
+              </div>
+          </div>
+      </div>
     </div>
-
-
+   
     <script src="./script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

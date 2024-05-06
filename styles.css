@@ -1,0 +1,4 @@
+.app{
+    transition: all 1s;
+    opacity: 0;
+}
